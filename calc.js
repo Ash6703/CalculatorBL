@@ -11,11 +11,7 @@ function multiply(a,b) {
 }
 
 function divide(a,b) {
-    if (b==0) {
-        return 'Error! Divison by 0 is not defined';   
-    } else {
-        return a/b;
-    }
+    return a/b;
 }
 
 function operate(operator,a,b) {
@@ -27,7 +23,11 @@ function operate(operator,a,b) {
         case '*':
             return multiply(a,b);
         case '/':
-            return divide(a,b).toFixed(5);
+            if (b==0) {
+                return 'Error! Divison by 0 is not defined';   
+            } else {
+                return divide(a,b).toFixed(5);
+            }
         default:
             return null;
     }
@@ -62,8 +62,6 @@ let eqButton = document.getElementsByClassName("eqButton")[0];
 eqButton.addEventListener("click", function() {
     result = operate(operator,parseFloat(firstNumber),parseFloat(secondNumber));
     updateDisplay(result);
-    firstNumber=result;
-    secondNumber="";
 })
 
 let clearButton = document.getElementsByClassName("clearButton")[0];
