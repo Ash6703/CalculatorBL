@@ -71,7 +71,7 @@ clearButton.addEventListener("click", function() {
     firstNumber="";
     secondNumber="";
     operator="";
-    result = "";
+    result = ""; 
     updateDisplay("");
 })
 
